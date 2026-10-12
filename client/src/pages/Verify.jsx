@@ -1,0 +1,4 @@
+import {useEffect,useState} from 'react';
+import {useParams} from 'react-router-dom';
+import api from '../services/api';
+export default function Verify(){const {certificateId}=useParams(),[data,setData]=useState(null),[error,setError]=useState('');useEffect(()=>{api.get(`/certificates/verify/${encodeURIComponent(certificateId)}`).then(r=>setData(r.data)).catch(()=>setError('This certificate could not be verified.'));},[certificateId]);return <section className="section-shell page-section profile-page"><h1>Certificate verification</h1>{error?<div className="alert error">{error}</div>:data?<article className="panel verify-card"><h2>Valid completion certificate</h2><p><strong>Student:</strong> {data.student}</p><p><strong>Course:</strong> {data.course}</p><p><strong>Issued:</strong> {new Date(data.issuedAt).toLocaleDateString()}</p><p><strong>Certificate ID:</strong> {data.certificateId}</p></article>:<p>Verifying...</p>}</section>}

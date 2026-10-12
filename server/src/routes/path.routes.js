@@ -1,0 +1,13 @@
+import { Router } from 'express';
+import mongoose from 'mongoose';
+import LearningPath from '../models/LearningPath.js';
+import { requireAuth, requireAdmin } from '../middleware/auth.js';
+import { z } from 'zod';
+const router=Router();
+const schema=z.object({ title:z.string().trim().min(3).max(120), description:z.string().max(1000).default(''), courses:z.array(z.string().refine(v=>mongoose.isValidObjectId(v),'Invalid course ID')).max(30).default([]), isPublished:z.boolean().default(false) });
+router.get('/',async(req,res,next)=>{try{res.json({paths:await LearningPath.find({isPublished:true}).populate('courses','title slug category level thumbnail isPublished').sort({createdAt:-1})});}catch(e){next(e)}});
+router.get('/admin',requireAuth,requireAdmin,async(req,res,next)=>{try{res.json({paths:await LearningPath.find().populate('courses','title slug')});}catch(e){next(e)}});
+router.post('/',requireAuth,requireAdmin,async(req,res,next)=>{try{const path=await LearningPath.create(schema.parse(req.body));res.status(201).json({path});}catch(e){next(e)}});
+router.put('/:id',requireAuth,requireAdmin,async(req,res,next)=>{try{const path=await LearningPath.findByIdAndUpdate(req.params.id,schema.parse(req.body),{new:true,runValidators:true});if(!path)return res.status(404).json({message:'Path not found'});res.json({path});}catch(e){next(e)}});
+router.delete('/:id',requireAuth,requireAdmin,async(req,res,next)=>{try{await LearningPath.findByIdAndDelete(req.params.id);res.json({message:'Path deleted'});}catch(e){next(e)}});
+export default router;
