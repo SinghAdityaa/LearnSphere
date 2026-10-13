@@ -336,3 +336,35 @@ select:focus, input:focus, textarea:focus { border-color: #6aa7d5; box-shadow: 0
 .student-detail h3 { margin-top: 24px; }
 .student-enrollments > div { display:flex; justify-content:space-between; gap:12px; padding: 12px 0; border-bottom:1px solid #e1e8f0; }
 @media (max-width: 650px) { .student-directory, .student-detail { padding:16px; } .student-search-controls { flex-wrap:wrap; } .student-table th, .student-table td { padding:8px; } }
+
+
+/* Admin dashboard layout fixes: responsive and readable */
+.admin-v3 { padding-top: 62px; }
+.admin-v3 .section-heading { max-width: 100%; margin-bottom: 32px; }
+.admin-v3 .section-heading h1 { font-size: clamp(2rem, 4vw, 3.65rem); line-height: 1.14; overflow-wrap: anywhere; }
+.admin-v3 .section-heading p { max-width: 700px; }
+.admin-v3 .admin-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.admin-v3 .admin-summary article {
+  min-width: 0; display: flex; flex-direction: column; align-items: flex-start;
+  justify-content: center; gap: 10px; padding: 20px 22px; min-height: 105px;
+}
+.admin-v3 .admin-summary article span { display: block; line-height: 1.45; font-size: .9rem; }
+.admin-v3 .admin-summary article strong { display: block; font-size: 1.8rem; line-height: 1.15; }
+.admin-v3 .editor-layout { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); }
+.admin-v3 .editor-layout > * { min-width: 0; }
+.admin-v3 .admin-course-row { align-items: flex-start; flex-wrap: wrap; }
+.admin-v3 .admin-course-row > div:first-child { min-width: 0; flex: 1 1 160px; }
+.admin-v3 .admin-course-row h3 { overflow-wrap: anywhere; }
+.admin-v3 .admin-actions { flex-wrap: wrap; justify-content: flex-start; }
+.admin-v3 .workspace-tabs { flex-wrap: wrap; }
+@media (max-width: 1000px) {
+  .admin-v3 .admin-summary { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .admin-v3 .editor-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .admin-v3 { padding-top: 36px; }
+  .admin-v3 .admin-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .admin-v3 .admin-summary article { padding: 16px; min-height: 95px; }
+  .admin-v3 .admin-summary article strong { font-size: 1.5rem; }
+  .admin-v3 .editor-form, .admin-v3 .editor-list { padding: 18px; }
+}
