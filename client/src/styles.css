@@ -948,3 +948,745 @@ select:focus, input:focus, textarea:focus { border-color: #6aa7d5; box-shadow: 0
     width: 100%;
   }
 }
+
+
+/* LearnSphere Advanced Student Dashboard V2 */
+
+.dash-v2-overview {
+  margin: 32px 0 48px;
+}
+
+.dash-v2-heading {
+  margin-bottom: 24px;
+}
+
+.dash-v2-heading h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0 0 8px;
+}
+
+.dash-v2-heading p {
+  margin: 0;
+}
+
+.dash-v2-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.dash-v2-stat {
+  min-width: 0;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.dash-v2-stat-icon {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 10px;
+  background: var(--blue-soft);
+  color: var(--blue);
+}
+
+.dash-v2-stat-label {
+  color: var(--muted);
+  font-size: .88rem;
+  line-height: 1.4;
+}
+
+.dash-v2-stat strong {
+  color: var(--navy);
+  font: 800 1.85rem Manrope, sans-serif;
+  line-height: 1.2;
+}
+
+.dash-v2-charts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.dash-v2-panel {
+  min-width: 0;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.dash-v2-panel h3 {
+  font-size: 1.12rem;
+  margin: 0 0 6px;
+}
+
+.dash-v2-panel > p {
+  margin: 0;
+  font-size: .86rem;
+}
+
+.dash-v2-ring {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  margin: 30px auto 20px;
+  background: conic-gradient(
+    var(--blue) var(--progress),
+    #e8eef4 0
+  );
+  display: grid;
+  place-items: center;
+}
+
+.dash-v2-ring > div {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dash-v2-ring strong {
+  font: 800 2.3rem Manrope, sans-serif;
+  color: var(--navy);
+}
+
+.dash-v2-ring span {
+  font-size: .8rem;
+  color: var(--muted);
+}
+
+.dash-v2-chart-caption {
+  text-align: center;
+  font-size: .82rem;
+  color: var(--muted);
+}
+
+.dash-v2-distribution {
+  display: grid;
+  gap: 30px;
+  margin-top: 42px;
+}
+
+.dash-v2-distribution-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: #506176;
+  font-size: .9rem;
+}
+
+.dash-v2-distribution-label strong {
+  color: var(--navy);
+}
+
+.dash-v2-track {
+  height: 10px;
+  border-radius: 5px;
+  background: #e8eef4;
+  overflow: hidden;
+}
+
+.dash-v2-track > span {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.dash-v2-resume {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 22px;
+  padding: 28px;
+  background: #edf5fb;
+  border: 1px solid #d4e5f2;
+  border-radius: 14px;
+}
+
+.dash-v2-resume h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.dash-v2-resume p {
+  margin: 0;
+  font-size: .9rem;
+}
+
+.dash-v2-resume .button {
+  flex-shrink: 0;
+}
+
+@media (max-width: 1050px) {
+  .dash-v2-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .dash-v2-charts {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-v2-resume {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .dash-v2-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .dash-v2-stat {
+    padding: 16px;
+  }
+
+  .dash-v2-stat strong {
+    font-size: 1.5rem;
+  }
+
+  .dash-v2-panel {
+    padding: 20px;
+  }
+
+  .dash-v2-resume {
+    padding: 20px;
+  }
+
+  .dash-v2-resume .button {
+    width: 100%;
+  }
+}
+
+
+/* Advanced dashboard integration fixes */
+
+.dash-v2-page .dashboard-welcome {
+  align-items: center;
+  margin-bottom: 38px;
+}
+
+.dash-v2-page .dashboard-welcome h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.dash-v2-page .dashboard-welcome p {
+  max-width: 650px;
+}
+
+.dash-v2-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 55px 0 22px;
+}
+
+.dash-v2-section-heading h2 {
+  margin: 0 0 8px;
+}
+
+.dash-v2-section-heading p {
+  margin: 0;
+  font-size: .9rem;
+}
+
+.dash-v2-course-placeholder {
+  width: 150px;
+  aspect-ratio: 16 / 10;
+  background: #eaf4fb;
+  color: #0f62a8;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+}
+
+.dash-v2-page .learning-row {
+  min-width: 0;
+}
+
+.dash-v2-page .learning-row-main {
+  min-width: 0;
+}
+
+.dash-v2-page .learning-row-main h3 {
+  overflow-wrap: anywhere;
+}
+
+.dash-v2-page .certificate-mini {
+  min-width: 0;
+}
+
+.dash-v2-page .certificate-mini > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.dash-v2-page .certificate-mini strong {
+  overflow-wrap: anywhere;
+}
+
+.dash-v2-certificate-arrow {
+  margin-left: auto;
+  color: #64748b !important;
+  flex-shrink: 0;
+}
+
+.dash-v2-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.dash-v2-empty h3 {
+  margin: 0;
+}
+
+.dash-v2-empty p {
+  max-width: 440px;
+  margin: 0 0 10px;
+}
+
+@media (max-width: 780px) {
+  .dash-v2-page .dashboard-welcome {
+    align-items: flex-start;
+  }
+
+  .dash-v2-section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dash-v2-course-placeholder {
+    width: 100px;
+  }
+}
+
+@media (max-width: 520px) {
+  .dash-v2-page .dashboard-welcome .button {
+    width: 100%;
+  }
+
+  .dash-v2-course-placeholder {
+    width: 100%;
+  }
+
+  .dash-v2-page .learning-row > .button {
+    width: 100%;
+  }
+}
+
+/* LearnSphere Course Discussions */
+
+.course-discussion {
+  margin: 48px 0;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.discussion-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.discussion-heading > svg {
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+.discussion-heading h2 {
+  font-size: 1.5rem;
+  margin: 0 0 6px;
+}
+
+.discussion-heading p {
+  margin: 0;
+  font-size: .9rem;
+}
+
+.discussion-compose,
+.discussion-reply-form,
+.discussion-edit {
+  display: grid;
+  gap: 12px;
+}
+
+.discussion-compose {
+  background: #f5f8fc;
+  border: 1px solid #dce5ef;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 28px;
+}
+
+.discussion-compose label,
+.discussion-reply-form label {
+  font-weight: 700;
+  font-size: .9rem;
+}
+
+.discussion-compose textarea,
+.discussion-reply-form textarea,
+.discussion-edit textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+}
+
+.discussion-compose .button,
+.discussion-reply-form .button {
+  justify-self: start;
+}
+
+.discussion-list {
+  display: grid;
+  gap: 18px;
+}
+
+.discussion-thread {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 22px;
+}
+
+.discussion-post-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.discussion-post-head strong {
+  color: var(--navy);
+  font-size: .93rem;
+}
+
+.discussion-post-head time {
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+.discussion-content {
+  color: #42536a;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.7;
+  margin: 0 0 14px;
+}
+
+.discussion-actions,
+.discussion-thread-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.discussion-actions button,
+.discussion-thread-footer button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 0;
+  background: transparent;
+  color: var(--blue);
+  padding: 6px 0;
+  font-size: .83rem;
+  font-weight: 700;
+}
+
+.discussion-actions .discussion-danger {
+  color: var(--danger);
+}
+
+.discussion-thread-footer {
+  margin-top: 12px;
+}
+
+.discussion-resolved {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--success);
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.discussion-replies {
+  margin-top: 20px;
+  margin-left: 24px;
+  padding-left: 20px;
+  border-left: 2px solid #d9e7f2;
+  display: grid;
+  gap: 16px;
+}
+
+.discussion-reply {
+  padding: 14px;
+  background: #f7f9fc;
+  border-radius: 8px;
+}
+
+.discussion-reply-form {
+  margin-top: 18px;
+  padding: 16px;
+  background: #f7f9fc;
+  border-radius: 8px;
+}
+
+.discussion-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 25px;
+}
+
+@media (max-width: 600px) {
+  .course-discussion {
+    padding: 18px;
+    margin: 30px 0;
+  }
+
+  .discussion-thread {
+    padding: 16px;
+  }
+
+  .discussion-replies {
+    margin-left: 8px;
+    padding-left: 12px;
+  }
+
+  .discussion-compose {
+    padding: 14px;
+  }
+
+  .discussion-compose .button,
+  .discussion-reply-form .button {
+    width: 100%;
+  }
+}
+
+
+/* Locked course discussion */
+
+.course-discussion-locked {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 42px 0;
+  padding: 25px;
+  background: #f5f8fc;
+  border: 1px solid #dce5ef;
+  border-radius: 12px;
+}
+
+.course-discussion-locked-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: #e4f0fa;
+  color: #0f62a8;
+  border-radius: 10px;
+}
+
+.course-discussion-locked > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.course-discussion-locked h3 {
+  font-size: 1.15rem;
+  margin: 0 0 7px;
+}
+
+.course-discussion-locked p {
+  margin: 0;
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+.course-discussion-locked .button {
+  flex-shrink: 0;
+}
+
+@media (max-width: 680px) {
+  .course-discussion-locked {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .course-discussion-locked .button {
+    width: 100%;
+  }
+}
+
+
+/* LearnSphere Course Discussions v2 */
+
+.discussion-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 24px 0 14px;
+}
+
+.discussion-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  min-height: 46px;
+  border: 1px solid #dbe3eb;
+  border-radius: 10px;
+  background: #fff;
+  color: #64748b;
+}
+
+.discussion-search:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.discussion-search input {
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #0f172a;
+  font: inherit;
+}
+
+.discussion-search input::placeholder {
+  color: #94a3b8;
+}
+
+.discussion-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.discussion-filter {
+  padding: 9px 14px;
+  border: 1px solid #dbe3eb;
+  border-radius: 8px;
+  background: #fff;
+  color: #475569;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.discussion-filter:hover {
+  background: #f1f5f9;
+}
+
+.discussion-filter.active {
+  background: #eff6ff;
+  border-color: #2563eb;
+  color: #1d4ed8;
+}
+
+.discussion-filter:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.discussion-results-count {
+  margin: 10px 0 16px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.discussion-reply-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.discussion-thread-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.discussion-thread-footer button {
+  cursor: pointer;
+}
+
+.discussion-content {
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+@media (min-width: 640px) {
+  .discussion-toolbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .discussion-search {
+    flex: 1;
+    max-width: 390px;
+  }
+}
+
+@media (max-width: 480px) {
+  .discussion-filters {
+    width: 100%;
+  }
+
+  .discussion-filter {
+    flex: 1;
+    text-align: center;
+    padding: 9px 8px;
+  }
+
+  .discussion-thread-footer {
+    gap: 10px;
+  }
+}
+

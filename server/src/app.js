@@ -1,3 +1,4 @@
+import discussionRoutes from './routes/discussion.routes.js';
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
@@ -41,6 +42,7 @@ app.use('/api/certificates', certificateRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/workspace', workspaceRoutes);
 app.use('/api/paths', pathRoutes);
+app.use('/api', discussionRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
