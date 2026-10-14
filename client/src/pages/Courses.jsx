@@ -1,16 +1,28 @@
-import { Search } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Search } from 'lucide-react';
 import CourseCard from '../components/CourseCard';
-import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
+import { useAuth } from '../context/AuthContext';
 
 export default function Courses() {
+  const location = useLocation();
   const { user } = useAuth();
   const [courses, setCourses] = useState([]);
   const [favorites, setFavorites] = useState(new Set());
   const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState('');
-  const [category, setCategory] = useState('');
+const [search, setSearch] = useState(
+  () => location.state?.search || ''
+);
+
+const [category, setCategory] = useState(
+  () => location.state?.category || ''
+);
+
+useEffect(() => {
+  setSearch(location.state?.search || '');
+  setCategory(location.state?.category || '');
+}, [location.state]);
   const [level, setLevel] = useState('');
 
   useEffect(() => {
