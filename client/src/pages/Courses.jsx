@@ -57,7 +57,7 @@ useEffect(() => {
     <section className="section-shell page-section">
       <div className="section-heading row-heading">
         <div><span className="eyebrow">Course catalog</span><h1>Choose what you want to learn next.</h1></div>
-        <p>Search the seeded demo courses or publish your own from the admin dashboard.</p>
+        <p></p>
       </div>
       <div className="filters-panel">
         <label className="search-field"><Search size={18} /><input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search courses, tags or topics" /></label>
